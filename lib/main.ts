@@ -1,6 +1,6 @@
-import _init, { foo } from './wasm/rust_wasm';
+import _init, { from_bin, to_bin } from './wasm/rust_wasm';
 
 export const initWasm = async () => {
     await _init();
-    return { foo };
+    return { from_bin, to_bin };
 };

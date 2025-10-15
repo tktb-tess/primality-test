@@ -19,7 +19,8 @@
     "dev": "vite",
     "build:vite": "tsc && vite build",
     "build:wasm": "rm -rf lib/wasm && cd ./wasm && wasm-pack build --target web --out-dir ../lib/wasm --no-pack",
-    "build": "pnpm build:wasm && pnpm build:vite"
+    "build": "pnpm build:wasm && pnpm build:vite",
+    "test": "vitest run"
   },
   "devDependencies": {
     "@types/node": "^24.7.2",
