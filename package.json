@@ -1,0 +1,31 @@
+{
+  "name": "@tktb-tess/primality-test",
+  "private": true,
+  "version": "0.0.0",
+  "author": "Tessyrrhaqt",
+  "license": "MIT",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "module": "./dist/bundle.js",
+  "types": "./dist/main.d.ts",
+  "exports": {
+    "types": "./dist/main.d.ts",
+    "import": "./dist/bundle.js",
+    "require": null
+  },
+  "scripts": {
+    "dev": "vite",
+    "build:vite": "tsc && vite build",
+    "build:wasm": "rm -rf lib/wasm && cd ./wasm && wasm-pack build --target web --out-dir ../lib/wasm --no-pack",
+    "build": "pnpm build:wasm && pnpm build:vite"
+  },
+  "devDependencies": {
+    "@types/node": "^24.7.2",
+    "typescript": "~5.9.2",
+    "vite": "^7.1.5",
+    "vite-plugin-dts": "^4.5.4",
+    "vitest": "^3.2.4"
+  }
+}
