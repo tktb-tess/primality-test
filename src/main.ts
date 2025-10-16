@@ -1,7 +1,8 @@
-import { initWasm } from '@tktb-tess/primality-test';
+import { initWasm } from '../lib/main';
 
-const { from_bin, to_bin } = await initWasm();
+Object.defineProperty(window, 'initWasm', {
+  value: initWasm,
+  enumerable: true,
+});
 
-console.log(BigInt(from_bin(Uint8Array.from([0xfc, 0xff]))));
-
-console.log(to_bin((-129n).toString()));
+export {};
